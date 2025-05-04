@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const data = [
@@ -170,30 +171,27 @@ export default function MenuSection() {
       <h2 className="text-center mb-8 text-2xl font-bold dark:text-white">
         <span className="flex gap-x-2 items-center justify-center">
           Our Menu{" "}
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="dark:fill-white fill-neutral-900">
             <path d="M21 10H3a1 1 0 0 0-1 1 10 10 0 0 0 5 8.66V21a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.34A10 10 0 0 0 22 11a1 1 0 0 0-1-1zM9 9V7.93a4.51 4.51 0 0 0-1.28-3.15A2.49 2.49 0 0 1 7 3V2H5v1a4.51 4.51 0 0 0 1.28 3.17A2.49 2.49 0 0 1 7 7.93V9zm4 0V7.93a4.51 4.51 0 0 0-1.28-3.15A2.49 2.49 0 0 1 11 3V2H9v1a4.51 4.51 0 0 0 1.28 3.15A2.49 2.49 0 0 1 11 7.93V9zm4 0V7.93a4.51 4.51 0 0 0-1.28-3.15A2.49 2.49 0 0 1 15 3V2h-2v1a4.51 4.51 0 0 0 1.28 3.15A2.49 2.49 0 0 1 15 7.93V9z" />
           </svg>
         </span>
       </h2>
       <div className="container flex flex-col items-center md:flex-row justify-between">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
           {displayedData.map((item, idx) => (
-            <div key={idx} className="border border-gray-200 rounded-xl w-full shadow-lg bg-white flex flex-col">
+            <div key={idx} className="border border-gray-200 rounded-lg w-full shadow-lg bg-white flex flex-col">
               <img src={item.background_image} alt={item.name} className="w-full h-44 object-cover rounded-t-xl" />
               <div className="p-4 flex-1 flex flex-col">
                 <h3 className="text-lg font-semibold">{item.name}</h3>
                 <p className="text-gray-500 mb-2">{item.description}</p>
                 <p className="font-bold mb-2">{FormatPrice((item.price as number) || 0)}</p>
-                <div className="mb-2">
-                  <button
-                    type="button"
-                    className="py-3 px-4 inline-flex items-center gap-x-2 text-sm hover:outline-2 hover:outline-amber-800 font-medium rounded-lg border border-transparent bg-amber-700 text-white hover:bg-amber-600 focus:outline-hidden focus:bg-amber-600 disabled:opacity-50 disabled:pointer-events-none"
+                <div className="mt-auto">
+                  <Link
+                    href={item.href}
+                    className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 text-neutral-800 hover:border-amber-600 hover:text-amber-600 focus:outline-hidden focus:border-amber-600 focus:text-amber-600 disabled:opacity-50 disabled:pointer-events-none "
                   >
                     View
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-white">
-                      <path d="M21 10H3a1 1 0 0 0-1 1 10 10 0 0 0 5 8.66V21a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.34A10 10 0 0 0 22 11a1 1 0 0 0-1-1zM9 9V7.93a4.51 4.51 0 0 0-1.28-3.15A2.49 2.49 0 0 1 7 3V2H5v1a4.51 4.51 0 0 0 1.28 3.17A2.49 2.49 0 0 1 7 7.93V9zm4 0V7.93a4.51 4.51 0 0 0-1.28-3.15A2.49 2.49 0 0 1 11 3V2H9v1a4.51 4.51 0 0 0 1.28 3.15A2.49 2.49 0 0 1 11 7.93V9zm4 0V7.93a4.51 4.51 0 0 0-1.28-3.15A2.49 2.49 0 0 1 15 3V2h-2v1a4.51 4.51 0 0 0 1.28 3.15A2.49 2.49 0 0 1 15 7.93V9z" />
-                    </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
