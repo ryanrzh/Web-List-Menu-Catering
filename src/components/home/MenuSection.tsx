@@ -182,7 +182,7 @@ export default function MenuSection() {
             <div key={idx} className="border border-gray-200 rounded-lg w-full shadow-lg bg-white flex flex-col">
               <img src={item.background_image} alt={item.name} className="w-full h-44 object-cover rounded-t-xl" />
               <div className="p-4 flex-1 flex flex-col">
-                <h3 className="text-lg font-semibold">{item.name}</h3>
+                <h3 className="text-md font-semibold">{item.name}</h3>
                 <p className="text-gray-500 mb-2">{item.description}</p>
                 <p className="font-bold mb-2">{FormatPrice((item.price as number) || 0)}</p>
                 <div className="mt-auto">

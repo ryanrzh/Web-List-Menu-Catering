@@ -15,5 +15,10 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-montserrat);
   @apply font-bold;
+}
+
+.font-monserrat {
+  font-family: var(--font-montserrat);
 }

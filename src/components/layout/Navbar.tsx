@@ -24,7 +24,7 @@ export default function Navbar() {
         <nav className="relative w-full md:flex md:items-center md:justify-between md:gap-3 container py-2">
           {/* Logo w/ Collapse Button */}
           <div className="flex items-center justify-between">
-            <a className="flex-none font-semibold text-xl text-white focus:outline-hidden focus:opacity-80" href="#" aria-label="Brand">
+            <a className="font-monserrat flex-none font-semibold text-xl text-white focus:outline-hidden focus:opacity-80" href="#" aria-label="Brand">
               Laksana
             </a>
 

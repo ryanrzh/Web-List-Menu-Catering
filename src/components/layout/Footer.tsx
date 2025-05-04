@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="py-6 border-t border-neutral-700 container">
           <div className="flex flex-wrap justify-between items-center gap-2">
             <div>
-              <p className="text-xs text-neutral-400">© 2025 Preline Labs.</p>
+              <p className="text-xs text-neutral-400">© 2025 CV. Laksana.</p>
             </div>
             {/* End Col */}
 
